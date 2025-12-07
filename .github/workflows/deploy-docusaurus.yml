@@ -21,9 +21,11 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile # Use --frozen-lockfile for CI
+        working-directory: book/
 
       - name: Build Docusaurus website
         run: yarn build
+        working-directory: book/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
