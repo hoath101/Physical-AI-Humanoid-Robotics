@@ -20,8 +20,7 @@ jobs:
           cache: 'npm' # Cache npm dependencies for faster builds
 
       - name: Install dependencies
-        run: npm ci # Use npm ci for clean install in CI
-        working-directory: book/
+        run: cd book && npm ci # Explicitly change directory and use npm ci
 
       - name: Build Docusaurus website
         run: npm run build
