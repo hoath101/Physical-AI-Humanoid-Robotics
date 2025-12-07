@@ -17,14 +17,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'yarn' # Cache yarn dependencies for faster builds
+          cache: 'npm' # Cache npm dependencies for faster builds
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile # Use --frozen-lockfile for CI
+        run: npm ci # Use npm ci for clean install in CI
         working-directory: book/
 
       - name: Build Docusaurus website
-        run: yarn build
+        run: npm run build
         working-directory: book/
 
       - name: Deploy to GitHub Pages
